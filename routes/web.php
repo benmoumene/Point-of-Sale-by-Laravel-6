@@ -25,4 +25,13 @@ Route::group(['middleware' => 'auth'], function (){
         Route::get('password/view', 'Backend\ProfileController@passwordView')->name('profiles.password.view');
         Route::post('password/update', 'Backend\ProfileController@passwordUpdate')->name('profiles.password.update');
     });
+//    Suppliers roputes
+    Route::prefix('suppliers')->group(function(){
+        Route::get('view', 'Backend\SupplierController@view')->name('suppliers.view');
+        Route::get('add', 'Backend\SupplierController@add')->name('suppliers.add');
+        Route::post('store', 'Backend\SupplierController@store')->name('suppliers.store');
+        Route::get('edit/{id}', 'Backend\SupplierController@edit')->name('suppliers.edit');
+        Route::post('update/{id}', 'Backend\SupplierController@update')->name('suppliers.update');
+        Route::get('delete/{id}', 'Backend\SupplierController@delete')->name('suppliers.delete');
+    });
 });
