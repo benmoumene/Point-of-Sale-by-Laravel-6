@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="76675ae9-5ea7-4902-8d3a-fed01f7a0af0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -14,6 +32,11 @@
     <execution />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="supplier-management" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
@@ -117,15 +140,21 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1pNXx0PuB40B2GTN84Q5pGrsLK8" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="terminal" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.file-colors" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
@@ -143,21 +172,51 @@
       <option name="presentableId" value="Default" />
       <updated>1615024769629</updated>
       <workItem from="1615024773311" duration="2650000" />
-      <workItem from="1615199703046" duration="608000" />
+      <workItem from="1615199703046" duration="3037000" />
+      <workItem from="1615215063970" duration="2168000" />
+      <workItem from="1615275979012" duration="213000" />
+      <workItem from="1615276239344" duration="6422000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="1779" y="124" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1615286225287">
+      <screen x="1366" y="0" width="1366" height="738" />
+    </state>
+    <state x="1779" y="124" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.738/1366.0.1366.738@1366.0.1366.738" timestamp="1615286225287" />
     <state x="1829" y="110" key="FileChooserDialogImpl" timestamp="1615025033215">
       <screen x="1366" y="0" width="1366" height="738" />
     </state>
     <state x="1829" y="110" key="FileChooserDialogImpl/0.0.1366.738/1366.0.1366.738@1366.0.1366.738" timestamp="1615025033215" />
-    <state x="1580" y="14" key="SettingsEditor" timestamp="1615025316953">
+    <state x="1495" y="56" key="MergeDialog" timestamp="1615288079068">
       <screen x="1366" y="0" width="1366" height="738" />
     </state>
-    <state x="1580" y="14" key="SettingsEditor/0.0.1366.738/1366.0.1366.738@1366.0.1366.738" timestamp="1615025316953" />
+    <state x="1495" y="56" key="MergeDialog/0.0.1366.738/1366.0.1366.738@1366.0.1366.738" timestamp="1615288079068" />
+    <state x="1580" y="14" key="SettingsEditor" timestamp="1615276195495">
+      <screen x="1366" y="0" width="1366" height="738" />
+    </state>
+    <state x="1580" y="14" key="SettingsEditor/0.0.1366.738/1366.0.1366.738@1366.0.1366.738" timestamp="1615276195495" />
+    <state x="1766" y="1" key="git4idea.branch.GitSmartOperationDialog" timestamp="1615288069412">
+      <screen x="1366" y="0" width="1366" height="738" />
+    </state>
+    <state x="1766" y="1" key="git4idea.branch.GitSmartOperationDialog/0.0.1366.738/1366.0.1366.738@1366.0.1366.738" timestamp="1615288069412" />
   </component>
 </project>
