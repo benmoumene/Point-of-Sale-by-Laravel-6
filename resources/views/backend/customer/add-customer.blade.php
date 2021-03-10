@@ -7,12 +7,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Add Supplier</h1>
+                        <h1 class="m-0">Add Customer</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="{{ url('/')  }}">Home</a></li>
-                            <li class="breadcrumb-item active">Add Supplier</li>
+                            <li class="breadcrumb-item active">Add Customer</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -29,7 +29,7 @@
                         <div class="card">
                             <div class="card-header">
                                 <h3>Add Supplier
-                                    <a class="btn btn-success float-right" href="{{route('suppliers.view')}}"><i class="fa fa-list"></i> View Supplier</a>
+                                    <a class="btn btn-success float-right" href="{{route('customers.view')}}"><i class="fa fa-list"></i> View Customers</a>
                                 </h3>
                             </div>
                             <div class="card-body">
@@ -42,7 +42,7 @@
                                         </ul>
                                     </div>
                                 @endif
-                                <form action="{{route('suppliers.store')}}" method="post" id="myForm">
+                                <form action="{{route('customers.store')}}" method="post" id="myForm">
                                     @csrf
                                     <div class="form-row">
                                         <div class="form-group col-md-6">

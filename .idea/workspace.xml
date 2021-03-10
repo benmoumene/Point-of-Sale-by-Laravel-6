@@ -20,16 +20,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76675ae9-5ea7-4902-8d3a-fed01f7a0af0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/SupplierController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Model/Supplier.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_03_09_090751_create_suppliers_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/backend/supplier/add-supplier.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/backend/supplier/edit-supplier.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/backend/supplier/view-supplier.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/CustomerController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Model/Customer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_03_10_075217_create_customers_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/backend/customer/add-customer.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/backend/customer/edit-customer.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/backend/customer/view-customer.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/layouts/master.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/backend/layouts/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/layouts/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/supplier/add-supplier.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/supplier/add-supplier.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -186,6 +186,8 @@
       <workItem from="1615215063970" duration="2168000" />
       <workItem from="1615275979012" duration="213000" />
       <workItem from="1615276239344" duration="6422000" />
+      <workItem from="1615357446634" duration="37000" />
+      <workItem from="1615360377197" duration="4032000" />
     </task>
     <servers />
   </component>
@@ -208,10 +210,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1779" y="124" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1615286225287">
+    <state x="1779" y="124" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1615364416786">
       <screen x="1366" y="0" width="1366" height="738" />
     </state>
-    <state x="1779" y="124" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.738/1366.0.1366.738@1366.0.1366.738" timestamp="1615286225287" />
+    <state x="1779" y="124" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.738/1366.0.1366.738@1366.0.1366.738" timestamp="1615364416786" />
     <state x="1829" y="110" key="FileChooserDialogImpl" timestamp="1615025033215">
       <screen x="1366" y="0" width="1366" height="738" />
     </state>
