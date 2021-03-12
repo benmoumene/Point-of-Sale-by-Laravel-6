@@ -7,12 +7,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Add Customer</h1>
+                        <h1 class="m-0">Edit Unit</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="{{ url('/')  }}">Home</a></li>
-                            <li class="breadcrumb-item active">Add Customer</li>
+                            <li class="breadcrumb-item active">Edit Unit</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -28,8 +28,8 @@
                     <section class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <h3>Add Customer
-                                    <a class="btn btn-success float-right" href="{{route('customers.view')}}"><i class="fa fa-list"></i> View Customers</a>
+                                <h3>Edit Unit
+                                    <a class="btn btn-success float-right" href="{{route('units.view')}}"><i class="fa fa-list"></i> View Unit</a>
                                 </h3>
                             </div>
                             <div class="card-body">
@@ -42,26 +42,15 @@
                                         </ul>
                                     </div>
                                 @endif
-                                <form action="{{route('customers.store')}}" method="post" id="myForm">
+                                <form action="{{route('units.update', $editData->id)}}" method="post" id="myForm">
                                     @csrf
                                     <div class="form-row">
                                         <div class="form-group col-md-6">
                                             <label for="name">Name</label>
-                                            <input type="text" name="name" id="name" class="form-control">
+                                            <input type="text" name="name" value="{{$editData->name}}" id="name" class="form-control">
                                         </div>
-                                        <div class="form-group col-md-6">
-                                            <label for="mobile_no">Mobile Number</label>
-                                            <input type="text" name="mobile_no" id="mobile_no" class="form-control">
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label for="email">Email</label>
-                                            <input type="email" name="email" id="email" class="form-control">
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label for="address">Address</label>
-                                            <input type="text" name="address" id="address" class="form-control">
-                                        </div>
-                                        <div class="form-group col-md-6">
+
+                                        <div class="form-group col-md-12">
                                             <input type="submit" value="Submit" class="btn btn-primary">
                                         </div>
                                     </div>
@@ -81,20 +70,11 @@
 
             $('#myForm').validate({
                 rules: {
-                    mobile_no: {
-                        required: true,
-                    },
                     name: {
                         required: true,
                     },
-                    email: {
-                        required: true,
-                        email: true,
-                    },
-                    address: {
-                        required: true,
-                        minlength: 8
-                    },
+                },
+                messages: {
                 },
                 errorElement: 'span',
                 errorPlacement: function (error, element) {
