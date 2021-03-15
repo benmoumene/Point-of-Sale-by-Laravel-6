@@ -34,7 +34,7 @@ Route::group(['middleware' => 'auth'], function (){
         Route::post('update/{id}', 'Backend\SupplierController@update')->name('suppliers.update');
         Route::get('delete/{id}', 'Backend\SupplierController@delete')->name('suppliers.delete');
     });
-    //    Customers roputes
+    //    Customers routes
     Route::prefix('customers')->group(function(){
         Route::get('view', 'Backend\CustomerController@view')->name('customers.view');
         Route::get('add', 'Backend\CustomerController@add')->name('customers.add');
@@ -43,7 +43,7 @@ Route::group(['middleware' => 'auth'], function (){
         Route::post('update/{id}', 'Backend\CustomerController@update')->name('customers.update');
         Route::get('delete/{id}', 'Backend\CustomerController@delete')->name('customers.delete');
     });
-    //    Unit roputes
+    //    Unit routes
     Route::prefix('units')->group(function(){
         Route::get('view', 'Backend\UnitController@view')->name('units.view');
         Route::get('add', 'Backend\UnitController@add')->name('units.add');
@@ -51,5 +51,14 @@ Route::group(['middleware' => 'auth'], function (){
         Route::get('edit/{id}', 'Backend\UnitController@edit')->name('units.edit');
         Route::post('update/{id}', 'Backend\UnitController@update')->name('units.update');
         Route::get('delete/{id}', 'Backend\UnitController@delete')->name('units.delete');
+    });
+    //    Category routes
+    Route::prefix('categories')->group(function(){
+        Route::get('view', 'Backend\CategoryController@view')->name('categories.view');
+        Route::get('add', 'Backend\CategoryController@add')->name('categories.add');
+        Route::post('store', 'Backend\CategoryController@store')->name('categories.store');
+        Route::get('edit/{id}', 'Backend\CategoryController@edit')->name('categories.edit');
+        Route::post('update/{id}', 'Backend\CategoryController@update')->name('categories.update');
+        Route::get('delete/{id}', 'Backend\CategoryController@delete')->name('categories.delete');
     });
 });
