@@ -20,14 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76675ae9-5ea7-4902-8d3a-fed01f7a0af0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/UnitController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Model/Unit.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_03_11_110444_create_units_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/backend/unit/add-unit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/backend/unit/edit-unit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/backend/unit/view-unit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/CategoryController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Model/Category.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_03_14_115925_create_categories_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/backend/category/add-category.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/backend/category/edit-category.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/backend/category/view-category.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_9_2021_5_07_PM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_9_2021_5_07_PM__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/customer/add-customer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/customer/add-customer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Model/Unit.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Unit.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/backend/layouts/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/layouts/sidebar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
@@ -43,7 +44,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="customer-manager" />
+        <entry key="$PROJECT_DIR$" value="unit-management" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -189,6 +190,7 @@
       <workItem from="1615360377197" duration="5478000" />
       <workItem from="1615454525595" duration="6010000" />
       <workItem from="1615541808113" duration="2616000" />
+      <workItem from="1615782928329" duration="3237000" />
     </task>
     <servers />
   </component>
@@ -211,10 +213,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="413" y="124" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1615461632896">
+    <state x="413" y="124" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1615723120592">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="413" y="124" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.738/1366.0.1366.738@0.0.1366.738" timestamp="1615461632896" />
+    <state x="413" y="124" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.738/1366.0.1366.738@0.0.1366.738" timestamp="1615723120592" />
     <state x="1779" y="124" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.738/1366.0.1366.738@1366.0.1366.738" timestamp="1615364416786" />
     <state x="1829" y="110" key="FileChooserDialogImpl" timestamp="1615025033215">
       <screen x="1366" y="0" width="1366" height="738" />
