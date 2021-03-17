@@ -8,6 +8,7 @@ use App\Model\Product;
 use App\Model\Supplier;
 use App\Model\Unit;
 use App\Model\Category;
+use Auth;
 
 class ProductController extends Controller
 {
@@ -31,7 +32,7 @@ class ProductController extends Controller
             'name' => 'required'
         ]);
 
-        $data = new Category();
+        $data = new Product();
         $data->name = $request->name;
         $data->created_by = Auth::user()->id;
         $data->save();

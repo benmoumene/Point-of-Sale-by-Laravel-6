@@ -49,7 +49,7 @@
                                     <div class="form-group col-md-6">
                                         <label for="supplier">Select Supplier</label>
                                         <select name="supplier_id" id="supplier" class="form-control">
-                                            <option>Select Supplier</option>
+                                            <option value="">Select Supplier</option>
                                             @foreach ($suppliers as $supplier)
                                             <option value="{{ $supplier->id }}">{{ $supplier->name }}</option>
                                             @endforeach
@@ -58,7 +58,7 @@
                                     <div class="form-group col-md-6">
                                         <label for="supplier">Select Category</label>
                                         <select name="category_id" id="category" class="form-control">
-                                            <option>Select Category</option>
+                                            <option value="">Select Category</option>
                                             @foreach ($categories as $category)
                                             <option value="{{ $category->id }}">{{ $category->name }}</option>
                                             @endforeach
@@ -67,7 +67,7 @@
                                     <div class="form-group col-md-6">
                                         <label for="supplier">Select Unit</label>
                                         <select name="unit_id" id="unit" class="form-control">
-                                            <option>Select Unit</option>
+                                            <option value="">Select Unit</option>
                                             @foreach ($units as $unit)
                                             <option value="{{ $unit->id }}">{{ $unit->name }}</option>
                                             @endforeach
