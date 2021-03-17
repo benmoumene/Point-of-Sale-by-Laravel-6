@@ -19,7 +19,10 @@ class ProductController extends Controller
 
     public function add()
     {
-        return view('backend.category.add-category');
+        $suppliers = Supplier::select('id', 'name')->get();
+        $categories = Category::select('id', 'name')->get();
+        $units = Unit::select('id', 'name')->get();
+        return view('backend.product.add-product', compact('suppliers', 'categories', 'units'));
     }
 
     public function store(Request $request)
