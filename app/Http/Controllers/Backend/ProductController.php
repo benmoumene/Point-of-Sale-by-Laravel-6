@@ -29,26 +29,32 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required'
+            'name' => 'required',
+            'category_id' => 'required',
+            'unit_id' => 'required',
+            'supplier_id' => 'required'
         ]);
 
         $data = new Product();
+        $data->supplier_id = $request->supplier_id;
+        $data->unit_id = $request->unit_id;
+        $data->category_id = $request->category_id;
         $data->name = $request->name;
         $data->created_by = Auth::user()->id;
         $data->save();
 
-        return redirect()->route('categories.view')->with('success', 'Category added successful!');
+        return redirect()->route('products.view')->with('success', 'Product added successful!');
     }
 
     public function edit($id)
     {
-        $editData = Category::find($id);
-        return view('backend.category.edit-category', compact('editData'));
+        $editData = Product::find($id);
+        return view('backend.product.edit-product', compact('editData'));
     }
 
     public function update($id, Request $request)
     {
-        $data = Category::find($id);
+        $data = Product::find($id);
         $data->name = $request->name;
         $data->updated_by = Auth::user()->id;
         $data->save();

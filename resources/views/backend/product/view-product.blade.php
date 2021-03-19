@@ -48,10 +48,10 @@
                                     @foreach($allData as $key => $product)
                                         <tr>
                                             <td>{{ $key+1 }}</td>
-                                            <td>{{ $product->supplier_id }}</td>
-                                            <td>{{ $product->category_id }}</td>
+                                            <td>{{ $product['supplier']['name'] }}</td>
+                                            <td>{{ $product['category']['name'] }}</td>
                                             <td>{{ $product->name }}</td>
-                                            <td>{{ $product->unit_id }}</td>
+                                            <td>{{ $product['unit']['name'] }}</td>
                                             <td>
                                                 <a href="{{route('products.edit', $product->id)}}" title="edit" class="btn btn-sm btn-warning"><i class="fa fa-edit"></i></a>
                                                 <a href="{{route('products.delete', $product->id)}}" id="delete" title="delete" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
