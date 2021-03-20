@@ -82,5 +82,13 @@ $route = Route::current()->getName();
                 <p>View Products</p>
             </a>
         </li>
+        {{--        purchase  management        --}}
+
+        <li class="nav-item">
+            <a href="{{ route('purchase.view') }}" class="nav-link {{($route=='purchase.view')? 'active' : ''}}">
+                <i class="far fa-circle nav-icon"></i>
+                <p>View Purchase</p>
+            </a>
+        </li>
     </ul>
 </nav>

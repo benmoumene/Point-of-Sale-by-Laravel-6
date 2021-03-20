@@ -70,4 +70,13 @@ Route::group(['middleware' => 'auth'], function (){
         Route::post('update/{id}', 'Backend\ProductController@update')->name('products.update');
         Route::get('delete/{id}', 'Backend\ProductController@delete')->name('products.delete');
     });
+    //    Purchase routes
+    Route::prefix('purchase')->group(function(){
+        Route::get('view', 'Backend\ProductController@view')->name('purchase.view');
+        Route::get('add', 'Backend\ProductController@add')->name('purchase.add');
+        Route::post('store', 'Backend\ProductController@store')->name('purchase.store');
+        Route::get('edit/{id}', 'Backend\ProductController@edit')->name('purchase.edit');
+        Route::post('update/{id}', 'Backend\ProductController@update')->name('purchase.update');
+        Route::get('delete/{id}', 'Backend\ProductController@delete')->name('purchase.delete');
+    });
 });
