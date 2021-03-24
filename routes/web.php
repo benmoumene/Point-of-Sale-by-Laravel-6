@@ -81,4 +81,5 @@ Route::group(['middleware' => 'auth'], function (){
     });
     //Default Routes
     Route::get('/get-category', 'Backend\DefaultController@getCategory')->name('get-category');
+    Route::get('/get-product', 'Backend\DefaultController@getProduct')->name('get-product');
 });

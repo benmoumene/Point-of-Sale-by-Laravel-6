@@ -63,13 +63,13 @@
                                         </div>
                                         <div class="form-group col-md-4">
                                             <label for="category_id">Select Category</label>
-                                            <select name="category_id" id="category_id" class="form-control">
+                                            <select name="category_id" id="category_id" class="form-control" disabled>
                                                 <option value="">Select Category</option>
                                             </select>
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label for="product_id">Select Product</label>
-                                            <select name="product_id" id="product_id" class="form-control">
+                                            <select name="product_id" id="product_id" class="form-control" disabled>
                                                 <option value="">Select Product</option>
                                             </select>
                                         </div>
@@ -103,6 +103,29 @@
                            html += '<option value="'+v.category_id+'">'+v.category.name+'</option>';
                         });
                         $('#category_id').html(html);
+                        $('#category_id').removeAttr("disabled");
+                    }
+                });
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $(function (){
+            $(document).on('change', '#category_id', function () {
+                var category_id = $(this).val();
+                $.ajax({
+                    url: "{{ route('get-product') }}",
+                    type: "GET",
+                    data: {
+                        category_id: category_id
+                    },
+                    success: function (data) {
+                        var html = '<option value="">Select Product</option>';
+                        $.each(data, function (key,v) {
+                            html += '<option value="'+v.product_id+'">'+v.name+'</option>';
+                        });
+                        $('#product_id').html(html);
+                        $('#product_id').removeAttr("disabled");
                     }
                 });
             });
@@ -144,9 +167,9 @@
         });
     </script>
     <script>
-        $('.datepicker').datepicker({
-            uiLibrary: 'bootstrap4',
-            format: 'yyyy-mm-dd'
-        });
+        // $('.datepicker').datepicker({
+        //     uiLibrary: 'bootstrap4',
+        //     format: 'yyyy-mm-dd'
+        // });
     </script>
 @endsection
