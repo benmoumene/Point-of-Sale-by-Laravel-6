@@ -72,11 +72,13 @@ Route::group(['middleware' => 'auth'], function (){
     });
     //    Purchase routes
     Route::prefix('purchase')->group(function(){
-        Route::get('view', 'Backend\ProductController@view')->name('purchase.view');
-        Route::get('add', 'Backend\ProductController@add')->name('purchase.add');
-        Route::post('store', 'Backend\ProductController@store')->name('purchase.store');
-        Route::get('edit/{id}', 'Backend\ProductController@edit')->name('purchase.edit');
-        Route::post('update/{id}', 'Backend\ProductController@update')->name('purchase.update');
-        Route::get('delete/{id}', 'Backend\ProductController@delete')->name('purchase.delete');
+        Route::get('view', 'Backend\PurchaseController@view')->name('purchase.view');
+        Route::get('add', 'Backend\PurchaseController@add')->name('purchase.add');
+        Route::post('store', 'Backend\PurchaseController@store')->name('purchase.store');
+        Route::get('edit/{id}', 'Backend\PurchaseController@edit')->name('purchase.edit');
+        Route::post('update/{id}', 'Backend\PurchaseController@update')->name('purchase.update');
+        Route::get('delete/{id}', 'Backend\PurchaseController@delete')->name('purchase.delete');
     });
+    //Default Routes
+    Route::get('/get-category', 'Backend\DefaultController@getCategory')->name('get-category');
 });

@@ -16,15 +16,15 @@ class PurchaseController extends Controller
     public function view()
     {
         $allData = Purchase::orderBy('date', 'desc')->orderBy('id', 'desc')->get();
-        return view('backend.product.view-product', compact('allData'));
+        return view('backend.purchase.view-purchase', compact('allData'));
     }
 
     public function add()
     {
-        $suppliers = Supplier::select('id', 'name')->get();
-        $categories = Category::select('id', 'name')->get();
-        $units = Unit::select('id', 'name')->get();
-        return view('backend.product.add-product', compact('suppliers', 'categories', 'units'));
+        $data['suppliers'] = Supplier::all();
+        $data['units'] = Unit::all();
+        $data['categories'] = Category::all();
+        return view('backend.purchase.add-purchase', $data);
     }
 
     public function store(Request $request)
