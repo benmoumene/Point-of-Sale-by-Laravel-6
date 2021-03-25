@@ -74,9 +74,43 @@
                                             </select>
                                         </div>
                                         <div class="form-group col-md-2" style="padding-top: 30px;">
-                                            <i class="fa fa-plus-circle btn btn-primary addeventmore">Add Item</i>
+                                            <a class="btn btn-primary addeventmore"><i class="fa fa-plus-circle"> Add Item</i></a>
                                         </div>
                                     </div>
+                            </div>
+                            <div class="card-body">
+                                <form action="{{ route('purchase.store') }}" id="myForm">
+                                    @csrf
+                                    <table class="table-m table-bordered" width="100%">
+                                        <thead>
+                                        <tr>
+                                            <th>Category</th>
+                                            <th>Product Name</th>
+                                            <th width="7%">Pcs/Kg</th>
+                                            <th width="10%">Unit Price</th>
+                                            <th>Description</th>
+                                            <th width="10%">Total Price</th>
+                                            <th>Action</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody id="addRow" class="addRow">
+
+                                        </tbody>
+                                        <tbody>
+                                        <tr>
+                                            <td colspan="5"></td>
+                                            <td>
+                                                <input type="text" name="estimated_amount" value="0" id="estimated_amout" class="form-control form-control-sm text-right estimated_amount" readonly style="background-color: #D8FDBA"/>
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <br>
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-primary" id="storeButton">Store Purchase</button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </section>
@@ -87,6 +121,30 @@
         </section>
         <!-- /.content -->
     </div>
+    <!-- html script -->
+    <script id="document-template" type="text/x-handlebars-template">
+        <tr class="delete_add_more_item" id="delete_add_more_item">
+            <input type="hidden" name="date[]" value="@{{ date }}">
+            <input type="hidden" name="purchase_no[]" value="@{{ purchase_no }}">
+            <input type="hidden" name="supplier_id[]" value="@{{ supplier_id }}">
+            <td>
+                <input type="hidden" name="category_id[]" value="@{{ category_id }}"> @{{ category_name }}
+            </td>
+            <td>
+                <input type="hidden" name="product_id[]" value="@{{ product_id }}"> @{{ product_name }}
+            </td>
+            <td>
+                <input type="number" min="1" name="buying_qty[]" value="1" class="form-control form-control-sm text-right unit_price">
+            </td>
+            <td>
+                <input type="text" name="description[]" class="form-control form-control-sm">
+            </td>
+            <td>
+                <input class="form-control form-control-sm text-right buying_price" name="buying_price[]" value="0" readonly>
+            </td>
+            <td><a class="btn btn-danger btn-sm removeeventmore"><i class="fa fa-window-close"></i></a></td>
+        </tr>
+    </script>
     <script type="text/javascript">
         $(function (){
             $(document).on('change', '#supplier_id', function () {
@@ -136,16 +194,16 @@
 
             $('#myForm').validate({
                 rules: {
-                    category_id: {
+                    purchase_no: {
                         required: true,
                     },
-                    name: {
+                    product_id: {
                         required: true,
                     },
                     supplier_id: {
                         required: true,
                     },
-                    unit_id: {
+                    category_id: {
                         required: true,
                     },
                 },

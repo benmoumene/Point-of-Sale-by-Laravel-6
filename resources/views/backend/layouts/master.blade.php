@@ -322,6 +322,7 @@
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="{{ asset('public/backend/dist/js/pages/dashboard.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js" integrity="sha512-PjbpC9E7cx3jU8vrz0Bqo8DNofDrLOoV94DXxx5PK8T4udhDrUcjnEiqLA/SD6YivgHE0pwGlC8RSnwxXXXI4w==" crossorigin="anonymous"></script>
 
     <script>
         $(function () {
