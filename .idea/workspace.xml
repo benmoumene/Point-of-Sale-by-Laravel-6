@@ -20,14 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76675ae9-5ea7-4902-8d3a-fed01f7a0af0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/backend/purchase/view-pending-list.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/PurchaseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/PurchaseController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/layouts/master.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/layouts/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/layouts/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/purchase/add-purchase.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/purchase/add-purchase.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/purchase/view-purchase.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/purchase/view-purchase.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/category/view-category.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/category/view-category.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/product/view-product.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/product/view-product.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/supplier/view-supplier.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/supplier/view-supplier.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/unit/view-unit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/unit/view-unit.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,7 +202,7 @@
       <workItem from="1616765168662" duration="659000" />
       <workItem from="1616993645725" duration="506000" />
       <workItem from="1617009897416" duration="7213000" />
-      <workItem from="1617082100950" duration="9252000" />
+      <workItem from="1617082100950" duration="12785000" />
     </task>
     <servers />
   </component>
