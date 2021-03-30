@@ -47,9 +47,14 @@
                                         <tr>
                                             <td>{{ $key+1 }}</td>
                                             <td>{{ $unit->name }}</td>
+                                            @php
+                                                $count_unit = App\Model\Product::where('unit_id', $unit->id)->count();
+                                            @endphp
                                             <td>
                                                 <a href="{{route('units.edit', $unit->id)}}" title="edit" class="btn btn-sm btn-warning"><i class="fa fa-edit"></i></a>
+                                                @if ($count_unit < 1)
                                                 <a href="{{route('units.delete', $unit->id)}}" id="delete" title="delete" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
+                                                @endif
                                             </td>
                                         </tr>
                                     @endforeach

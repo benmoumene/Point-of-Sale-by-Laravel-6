@@ -46,9 +46,14 @@
                                         <tr>
                                             <td>{{ $key+1 }}</td>
                                             <td>{{ $category->name }}</td>
+                                            @php
+                                                $count_category = App\Model\Product::where('category_id', $category->id)->count();
+                                            @endphp
                                             <td>
                                                 <a href="{{route('categories.edit', $category->id)}}" title="edit" class="btn btn-sm btn-warning"><i class="fa fa-edit"></i></a>
+                                                @if ($count_category < 1)
                                                 <a href="{{route('categories.delete', $category->id)}}" id="delete" title="delete" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
+                                                    @endif
                                             </td>
                                         </tr>
                                     @endforeach

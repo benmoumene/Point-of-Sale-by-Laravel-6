@@ -19,7 +19,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76675ae9-5ea7-4902-8d3a-fed01f7a0af0" name="Default Changelist" comment="" />
+    <list default="true" id="76675ae9-5ea7-4902-8d3a-fed01f7a0af0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/category/view-category.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/category/view-category.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/product/view-product.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/product/view-product.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/supplier/view-supplier.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/supplier/view-supplier.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/unit/view-unit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/unit/view-unit.blade.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,7 +38,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="unit-management" />
+        <entry key="$PROJECT_DIR$" value="product-branch" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -135,6 +141,8 @@
       <path value="$PROJECT_DIR$/vendor/sebastian/lines-of-code" />
       <path value="$PROJECT_DIR$/vendor/sebastian/version" />
       <path value="$PROJECT_DIR$/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/vendor/maximebf/debugbar" />
+      <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar" />
     </include_path>
   </component>
   <component name="ProjectId" id="1pNXx0PuB40B2GTN84Q5pGrsLK8" />
@@ -152,7 +160,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.editor" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
@@ -182,7 +190,19 @@
       <workItem from="1615916407323" duration="591000" />
       <workItem from="1616050247579" duration="23000" />
       <workItem from="1616076338933" duration="74000" />
-      <workItem from="1616251062354" duration="370000" />
+      <workItem from="1616251062354" duration="6284000" />
+      <workItem from="1616473710056" duration="3180000" />
+      <workItem from="1616489334359" duration="4963000" />
+      <workItem from="1616506902257" duration="16000" />
+      <workItem from="1616565652424" duration="2943000" />
+      <workItem from="1616587647007" duration="10966000" />
+      <workItem from="1616648184719" duration="6155000" />
+      <workItem from="1616663548573" duration="368000" />
+      <workItem from="1616664659863" duration="8652000" />
+      <workItem from="1616765168662" duration="659000" />
+      <workItem from="1616993645725" duration="506000" />
+      <workItem from="1617009897416" duration="7213000" />
+      <workItem from="1617082100950" duration="12785000" />
     </task>
     <servers />
   </component>
@@ -205,18 +225,19 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="413" y="124" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1615723120592">
+    <state x="413" y="124" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1616474198596">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="413" y="124" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.738/1366.0.1366.738@0.0.1366.738" timestamp="1615723120592" />
+    <state x="413" y="124" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.738/1366.0.1366.738@0.0.1366.738" timestamp="1616474198596" />
     <state x="1779" y="124" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.738/1366.0.1366.738@1366.0.1366.738" timestamp="1615364416786" />
     <state x="1829" y="110" key="FileChooserDialogImpl" timestamp="1615025033215">
       <screen x="1366" y="0" width="1366" height="738" />
     </state>
     <state x="1829" y="110" key="FileChooserDialogImpl/0.0.1366.738/1366.0.1366.738@1366.0.1366.738" timestamp="1615025033215" />
-    <state x="1580" y="14" key="SettingsEditor" timestamp="1615542402034">
+    <state x="1580" y="14" key="SettingsEditor" timestamp="1616490279141">
       <screen x="1366" y="0" width="1366" height="738" />
     </state>
-    <state x="1580" y="14" key="SettingsEditor/0.0.1366.738/1366.0.1366.738@1366.0.1366.738" timestamp="1615542402034" />
+    <state x="214" y="14" key="SettingsEditor/0.0.1366.738/1366.0.1366.738@0.0.1366.738" timestamp="1616256995763" />
+    <state x="1580" y="14" key="SettingsEditor/0.0.1366.738/1366.0.1366.738@1366.0.1366.738" timestamp="1616490279141" />
   </component>
 </project>

@@ -70,4 +70,17 @@ Route::group(['middleware' => 'auth'], function (){
         Route::post('update/{id}', 'Backend\ProductController@update')->name('products.update');
         Route::get('delete/{id}', 'Backend\ProductController@delete')->name('products.delete');
     });
+    //    Purchase routes
+    Route::prefix('purchase')->group(function(){
+        Route::get('view', 'Backend\PurchaseController@view')->name('purchase.view');
+        Route::get('add', 'Backend\PurchaseController@add')->name('purchase.add');
+        Route::post('store', 'Backend\PurchaseController@store')->name('purchase.store');
+        Route::get('pending', 'Backend\PurchaseController@pendingList')->name('purchase.pending.list');
+        Route::get('edit/{id}', 'Backend\PurchaseController@edit')->name('purchase.edit');
+        Route::get('approve/{id}', 'Backend\PurchaseController@approve')->name('purchase.approve');
+        Route::get('delete/{id}', 'Backend\PurchaseController@delete')->name('purchase.delete');
+    });
+    //Default Routes
+    Route::get('/get-category', 'Backend\DefaultController@getCategory')->name('get-category');
+    Route::get('/get-product', 'Backend\DefaultController@getProduct')->name('get-product');
 });
