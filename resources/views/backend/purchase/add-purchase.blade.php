@@ -79,7 +79,7 @@
                                     </div>
                             </div>
                             <div class="card-body">
-                                <form action="{{ route('purchase.store') }}" id="myForm">
+                                <form action="{{ route('purchase.store') }}" method="post" id="myForm">
                                     @csrf
                                     <table class="table-m table-bordered" width="100%">
                                         <thead>
@@ -152,13 +152,15 @@
     <script type="text/javascript">
         $(document).ready(function () {
             $(document).on("click", ".addeventmore", function () {
-                var date = $('#date').val();
+                var date = new Date($('#date').val());
+                var date = moment(date).format("YYYY-MM-DD");
                 var purchase_no = $('#purchase_no').val();
                 var supplier_id = $('#supplier_id').val();
                 var category_id = $('#category_id').val();
                 var category_name = $('#category_id').find('option:selected').text();
                 var product_id = $('#product_id').val();
                 var product_name = $('#product_id').find('option:selected').text();
+                console.log(product_id);
 
                 if(date==''){
                     $.notify("Date is required", {globalPosition: 'top right', className: 'error'});
@@ -184,7 +186,7 @@
                 var source = $("#document-template").html();
                 var template = Handlebars.compile(source);
                 var data = {
-                    data:data,
+                    date:date,
                     purchase_no:purchase_no,
                     supplier_id:supplier_id,
                     category_id:category_id,
@@ -254,7 +256,7 @@
                     success: function (data) {
                         var html = '<option value="">Select Product</option>';
                         $.each(data, function (key,v) {
-                            html += '<option value="'+v.product_id+'">'+v.name+'</option>';
+                            html += '<option value="'+v.id+'">'+v.name+'</option>';
                         });
                         $('#product_id').html(html);
                         $('#product_id').removeAttr("disabled");
@@ -299,8 +301,7 @@
         });
     </script>
     <script>
-        // $('.datepicker').datepicker({
-        //     uiLibrary: 'bootstrap4',
+        // $(".datepicker").datepicker({
         //     format: 'yyyy-mm-dd'
         // });
     </script>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Model\Category;
 use App\Model\Product;
@@ -29,49 +30,61 @@ class PurchaseController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required',
-            'category_id' => 'required',
-            'unit_id' => 'required',
-            'supplier_id' => 'required'
-        ]);
-
-        $data = new Product();
-        $data->supplier_id = $request->supplier_id;
-        $data->unit_id = $request->unit_id;
-        $data->category_id = $request->category_id;
-        $data->name = $request->name;
-        $data->created_by = Auth::user()->id;
-        $data->save();
-
-        return redirect()->route('products.view')->with('success', 'Product added successful!');
+        if ($request->category_id == null) {
+            return redirect()->back()->with('error', 'Sorry! You do not select any item.');
+        } else {
+            $count_category = count($request->category_id);
+            for ($i=0; $i < $count_category; $i++){
+                $purchase = new Purchase();
+                $purchase->date = date('Y-m-d', strtotime($request->date[$i]));
+                $purchase->purchase_no = $request->purchase_no[$i];
+                $purchase->supplier_id = $request->supplier_id[$i];
+                $purchase->category_id = $request->category_id[$i];
+                $purchase->product_id = $request->product_id[$i];
+                $purchase->buying_qty = $request->buying_qty[$i];
+                $purchase->unit_price = $request->unit_price[$i];
+                $purchase->buying_price = $request->buying_price[$i];
+                $purchase->description = $request->description[$i];
+                $purchase->created_by = Auth::user()->id;
+                $purchase->status = '0';
+                $purchase->save();
+            }
+        }
+        return  redirect()->route('purchase.view')->with('success', 'Data saved successfully');
+    }
+    function pendingList(){
+        $allData = Purchase::orderBy('date', 'desc')->orderBy('id', 'desc')->where('status', '0')->get();
+        return view('backend.purchase.view-pending-list', compact('allData'));
     }
 
     public function edit($id)
     {
-        $editData = Product::find($id);
-        $suppliers = Supplier::select('id', 'name')->get();
-        $categories = Category::select('id', 'name')->get();
-        $units = Unit::select('id', 'name')->get();
-        return view('backend.product.edit-product', compact('editData', 'suppliers', 'categories', 'units'));
+//        $editData = Product::find($id);
+//        $suppliers = Supplier::select('id', 'name')->get();
+//        $categories = Category::select('id', 'name')->get();
+//        $units = Unit::select('id', 'name')->get();
+//        return view('backend.product.edit-product', compact('editData', 'suppliers', 'categories', 'units'));
     }
 
-    public function update($id, Request $request)
+    public function approve($id)
     {
-        $data = Product::find($id);
-        $data->supplier_id = $request->supplier_id;
-        $data->unit_id = $request->unit_id;
-        $data->category_id = $request->category_id;
-        $data->name = $request->name;
-        $data->updated_by = Auth::user()->id;
-        $data->save();
-        return redirect()->route('products.view')->with('success', 'Product info updated!');
+        $purchase = Purchase::find($id);
+        $product = Product::where('id', $purchase->product_id)->first();
+        $purchase_qty = ((float)($purchase->buying_qty))+((float)($product->quantity));
+        $product->quantity = $purchase_qty;
+        if($product->save()){
+            DB::table('purchases')
+                ->where('id', $id)
+                ->update(['status' => 1]);
+        }
+
+        return redirect()->route('purchase.pending.list')->with('success', 'Purchase approved!');
     }
 
     public function delete($id)
     {
-        $data = Product::find($id);
+        $data = Purchase::find($id);
         $data->delete();
-        return redirect()->route('products.view')->with('warning', 'Product Deleted!');
+        return redirect()->route('purchase.view')->with('warning', 'Purchase Deleted!');
     }
 }

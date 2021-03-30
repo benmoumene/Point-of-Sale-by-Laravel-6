@@ -7,12 +7,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Manage Purchase</h1>
+                        <h1 class="m-0">Pending Purchase List</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="{{ url('/')  }}">Home</a></li>
-                            <li class="breadcrumb-item active">Purchase</li>
+                            <li class="breadcrumb-item active">Pending Purchase</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -28,8 +28,8 @@
                     <section class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <h3>Purchase List
-                                    <a class="btn btn-success float-right" href="{{route('purchase.add')}}"><i class="fa fa-plus-circle"></i> Add Purchase</a>
+                                <h3>Pending Purchase List
+{{--                                    <a class="btn btn-success float-right" href="{{route('purchase.add')}}"><i class="fa fa-plus-circle"></i> Add Purchase</a>--}}
                                 </h3>
                             </div>
                             <div class="card-body">
@@ -65,13 +65,13 @@
                                             <td>{{ $purchase->buying_price }}</td>
                                             <td>
                                                 @if($purchase->status == '0')
-                                                <span>Pending</span>
+                                                    <span>Pending</span>
                                                 @elseif ($purchase->status == '1')
-                                                <span>Approved</span>
+                                                    <span>Approved</span>
                                                 @endif
                                             </td>
                                             <td>
-                                                <a href="{{route('purchase.delete', $purchase->id)}}" id="delete" title="delete" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
+                                                <a href="{{route('purchase.approve', $purchase->id)}}" id="approveBtn" title="Approve" class="btn btn-sm btn-success"><i class="fa fa-check-circle"></i></a>
                                             </td>
                                         </tr>
                                     @endforeach
@@ -91,6 +91,32 @@
         $(document).ready(function () {
             $('#example1').DataTable({
                 "scrollX": true
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $(function (){
+            $(document).on('click', '#approveBtn', function (e){
+                e.preventDefault();
+                var link = $(this).attr("href");
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "Approve this purchase?",
+                    icon: 'success',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, Approve it!'
+                }).then((result)=> {
+                    if (result.value){
+                        window.location.href = link;
+                        Swal.fire(
+                            'Approved!',
+                            'Your purchase has been approved!',
+                            'success'
+                        )
+                    }
+                })
             });
         });
     </script>
