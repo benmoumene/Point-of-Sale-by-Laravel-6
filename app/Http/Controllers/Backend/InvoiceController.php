@@ -7,17 +7,22 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Model\Category;
 use App\Model\Product;
+use App\Model\Purchase;
 use App\Model\Supplier;
 use App\Model\Unit;
-use App\Model\Purchase;
+use App\Model\Invoice;
+use App\Model\InvoiceDetail;
+use App\Model\Payment;
+use App\Model\PaymentDetail;
 use Auth;
 
-class PurchaseController extends Controller
+class InvoiceController extends Controller
 {
     public function view()
     {
-        $allData = Purchase::orderBy('date', 'desc')->orderBy('id', 'desc')->get();
-        return view('backend.purchase.view-purchase', compact('allData'));
+        $allData = Invoice::orderBy('date', 'desc')->orderBy('id', 'desc')->get();
+        return view('backend.invoice.view-invoice', compact('allData'));
+
     }
 
     public function add()
@@ -25,7 +30,7 @@ class PurchaseController extends Controller
         $data['suppliers'] = Supplier::all();
         $data['units'] = Unit::all();
         $data['categories'] = Category::all();
-        return view('backend.purchase.add-purchase', $data);
+        return view('backend.invoice.add-invoice', $data);
     }
 
     public function store(Request $request)

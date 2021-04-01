@@ -88,13 +88,6 @@
         <!-- /.content -->
     </div>
     <script type="text/javascript">
-        $(document).ready(function () {
-            $('#example1').DataTable({
-                "scrollX": true
-            });
-        });
-    </script>
-    <script type="text/javascript">
         $(function (){
             $(document).on('click', '#approveBtn', function (e){
                 e.preventDefault();

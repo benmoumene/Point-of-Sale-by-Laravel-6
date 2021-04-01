@@ -76,11 +76,20 @@ Route::group(['middleware' => 'auth'], function (){
         Route::get('add', 'Backend\PurchaseController@add')->name('purchase.add');
         Route::post('store', 'Backend\PurchaseController@store')->name('purchase.store');
         Route::get('pending', 'Backend\PurchaseController@pendingList')->name('purchase.pending.list');
-        Route::get('edit/{id}', 'Backend\PurchaseController@edit')->name('purchase.edit');
         Route::get('approve/{id}', 'Backend\PurchaseController@approve')->name('purchase.approve');
         Route::get('delete/{id}', 'Backend\PurchaseController@delete')->name('purchase.delete');
     });
     //Default Routes
     Route::get('/get-category', 'Backend\DefaultController@getCategory')->name('get-category');
     Route::get('/get-product', 'Backend\DefaultController@getProduct')->name('get-product');
+
+    //    Invoice routes
+    Route::prefix('invoice')->group(function(){
+        Route::get('view', 'Backend\InvoiceController@view')->name('invoice.view');
+        Route::get('add', 'Backend\InvoiceController@add')->name('invoice.add');
+        Route::post('store', 'Backend\InvoiceController@store')->name('invoice.store');
+        Route::get('pending', 'Backend\InvoiceController@pendingList')->name('invoice.pending.list');
+        Route::get('approve/{id}', 'Backend\InvoiceController@approve')->name('invoice.approve');
+        Route::get('delete/{id}', 'Backend\InvoiceController@delete')->name('invoice.delete');
+    });
 });
