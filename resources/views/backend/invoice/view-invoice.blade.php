@@ -29,7 +29,7 @@
                         <div class="card">
                             <div class="card-header">
                                 <h3>Invoice List
-                                    <a class="btn btn-success float-right" href="{{route('purchase.add')}}"><i class="fa fa-plus-circle"></i> Add Invoice</a>
+                                    <a class="btn btn-success float-right" href="{{route('invoice.add')}}"><i class="fa fa-plus-circle"></i> Add Invoice</a>
                                 </h3>
                             </div>
                             <div class="card-body">

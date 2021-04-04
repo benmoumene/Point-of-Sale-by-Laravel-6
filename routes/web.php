@@ -82,6 +82,7 @@ Route::group(['middleware' => 'auth'], function (){
     //Default Routes
     Route::get('/get-category', 'Backend\DefaultController@getCategory')->name('get-category');
     Route::get('/get-product', 'Backend\DefaultController@getProduct')->name('get-product');
+    Route::get('/get-stock', 'Backend\DefaultController@getStock')->name('check-product-stock');
 
     //    Invoice routes
     Route::prefix('invoice')->group(function(){

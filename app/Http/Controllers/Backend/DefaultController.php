@@ -24,4 +24,10 @@ class DefaultController extends Controller
         $allProduct= Product::where('category_id', $category_id)->get();
         return response()->json($allProduct);
     }
+
+    public function getStock(Request $request){
+        $product_id = $request->product_id;
+        $stock = Product::where('id', $product_id)->first()->quantity;
+        return response()->json($stock);
+    }
 }

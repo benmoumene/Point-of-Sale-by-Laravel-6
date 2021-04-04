@@ -20,23 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76675ae9-5ea7-4902-8d3a-fed01f7a0af0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/InvoiceController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Model/Invoice.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Model/InvoiceDetail.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Model/Payment.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Model/PaymentDetail.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_04_01_080604_create_invoices_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_04_01_080847_create_invoice_details_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_04_01_080926_create_payments_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_04_01_081023_create_payment_details_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/backend/invoice/add-invoice.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/backend/invoice/view-invoice.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/PurchaseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/PurchaseController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/layouts/master.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/layouts/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/layouts/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/purchase/view-pending-list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/purchase/view-pending-list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/purchase/view-purchase.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/purchase/view-purchase.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/DefaultController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/InvoiceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/InvoiceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/invoice/add-invoice.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/invoice/add-invoice.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/invoice/view-invoice.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/invoice/view-invoice.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -218,7 +206,10 @@
       <workItem from="1617082100950" duration="13172000" />
       <workItem from="1617181178661" duration="4952000" />
       <workItem from="1617202745525" duration="590000" />
-      <workItem from="1617255972950" duration="14152000" />
+      <workItem from="1617255972950" duration="14247000" />
+      <workItem from="1617369046736" duration="22000" />
+      <workItem from="1617511887777" duration="2536000" />
+      <workItem from="1617525674619" duration="5972000" />
     </task>
     <servers />
   </component>
