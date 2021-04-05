@@ -41,6 +41,7 @@ class InvoiceController extends Controller
 
     public function store(Request $request)
     {
+        dd($request);
         if ($request->category_id == null) {
             return redirect()->back()->with('error', 'Sorry! You do not select any item.');
         } else {

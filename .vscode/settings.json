@@ -1,1 +1,25 @@
-{}
+{
+    "php.executablePath": "",
+    "intelephense.diagnostics.undefinedTypes": false,
+    "intelephense.diagnostics.undefinedMethods": false,
+    "intelephense.diagnostics.undefinedProperties": false,
+    "intelephense.diagnostics.undefinedConstants": false,
+    "intelephense.diagnostics.typeErrors": false,
+    "intelephense.diagnostics.undefinedVariables": false,
+    "intelephense.diagnostics.unusedSymbols": false,
+    "intelephense.diagnostics.unexpectedTokens": false,
+    "intelephense.diagnostics.undefinedSymbols": false,
+    "intelephense.diagnostics.undefinedFunctions": false,
+    "intelephense.diagnostics.undefinedClassConstants": false,
+    "intelephense.diagnostics.enable": false,
+    "intelephense.diagnostics.languageConstraints": false,
+    "intelephense.diagnostics.embeddedLanguages": false,
+    "intelephense.diagnostics.duplicateSymbols": false,
+    "intelephense.diagnostics.argumentCount": false,
+    "intelephense.diagnostics.deprecated": false,
+    "intelephense.completion.triggerParameterHints": false,
+    "intelephense.compatibility.correctForArrayAccessArrayAndTraversableArrayUnionTypes": false,
+    "intelephense.compatibility.correctForBaseClassStaticUnionTypes": false,
+    "intelephense.completion.insertUseDeclaration": false,
+    "intelephense.diagnostics.implementationErrors": false
+}
