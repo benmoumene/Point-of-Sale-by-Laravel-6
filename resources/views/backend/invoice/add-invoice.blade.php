@@ -123,6 +123,20 @@
                                             placeholder="Write your description here..."></textarea>
                                     </div>
                                 </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-3">
+                                        <label for="paid_status">Paid Status</label>
+                                        <select name="paid_status" id="paid_status" class="form-control form-control-sm">
+                                            <option value="">Select Status</option>
+                                            <option value="full_paid">Full Paid</option>
+                                            <option value="full_due">Full Due</option>
+                                            <option value="partial_paid">Partial Paid</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-3">
+                                        <input type="text" name="paid_amount" class="form-control form-control-sm paid_amount" style="display: none; margin-top: 30px;">
+                                    </div>
+                                </div>
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-primary" id="storeButton">Invoice
                                         Store</button>
