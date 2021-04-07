@@ -9,6 +9,7 @@ use App\Model\Category;
 use App\Model\Product;
 use App\Model\Purchase;
 use App\Model\Supplier;
+Use App\Model\Customer;
 use App\Model\Unit;
 use App\Model\Invoice;
 use App\Model\InvoiceDetail;
@@ -36,6 +37,7 @@ class InvoiceController extends Controller
             $invoice_data = Invoice::orderBy('id', 'desc')->first()->invoice_no;
             $data['invoice_no'] = $invoice_data+1;
         }
+        $data['customers'] = Customer::all();
         return view('backend.invoice.add-invoice', $data);
     }
 

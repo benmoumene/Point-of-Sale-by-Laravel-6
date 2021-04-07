@@ -126,7 +126,7 @@
                                 <div class="form-row">
                                     <div class="form-group col-md-3">
                                         <label for="paid_status">Paid Status</label>
-                                        <select name="paid_status" id="paid_status" class="form-control form-control-sm">
+                                        <select name="paid_status" id="paid_status" class="form-control">
                                             <option value="">Select Status</option>
                                             <option value="full_paid">Full Paid</option>
                                             <option value="full_due">Full Due</option>
@@ -134,7 +134,28 @@
                                         </select>
                                     </div>
                                     <div class="form-group col-md-3">
-                                        <input type="text" name="paid_amount" class="form-control form-control-sm paid_amount" style="display: none; margin-top: 30px;">
+                                        <input type="text" name="paid_amount" class="form-control paid_amount" style="display: none; margin-top: 30px;" placeholder="Enter partial amount">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="customer_id">Select Customer</label>
+                                        <select name="customer_id" id="customer_id" class="form-control select2">
+                                            <option value="">Select Customer</option>
+                                            @foreach ($customers as $customer)
+                                            <option value="{{ $customer->id }}">{{ $customer->name }}({{ $customer->mobile_no }}, {{ $customer->address }})</option>
+                                            @endforeach
+                                            <option value="0">New Customer</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-row new_customer" style="display: none;">
+                                    <div class="form-group col-md-4">
+                                        <input type="text" name="name" id="name" class="form-control form-control-sm" placeholder="Write customer name....">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <input type="text" name="mobile_no" id="mobile_no" class="form-control form-control-sm" placeholder="Write customer number...">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <input type="text" name="address" id="address" class="form-control form-control-sm" placeholder="Write customer address...">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -255,6 +276,7 @@
     });
 
 </script>
+{{-- get products --}}
 <script type="text/javascript">
     $(function () {
         $(document).on('change', '#product_id', function () {
@@ -273,6 +295,7 @@
     });
 
 </script>
+{{-- get category --}}
 <script type="text/javascript">
     $(function () {
         $(document).on('change', '#category_id', function () {
@@ -297,6 +320,31 @@
     });
 
 </script>
+{{-- paid status show-hide --}}
+<script type="text/javascript">
+    $(document).on('change', '#paid_status', function(){
+        var paid_status = $(this).val();
+        if(paid_status == 'partial_paid'){
+            $('.paid_amount').show();
+        } else {
+            $('.paid_amount').hide();
+        }
+    });
+
+</script>
+{{-- new customer show-hide --}}
+<script type="text/javascript">
+    $(document).on('change', '#customer_id', function(){
+        var customer_status = $(this).val();
+        if(customer_status == 0){
+            $('.new_customer').show();
+        } else {
+            $('.new_customer').hide();
+        }
+    });
+
+</script>
+{{-- select2 --}}
 <script type="text/javascript">
     $(function () {
         $('.select2').select2({
