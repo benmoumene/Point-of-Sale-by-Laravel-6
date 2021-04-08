@@ -51,7 +51,7 @@
                                 </div>
                                 <div class="form-group col-md-2">
                                     <label for="date">Date</label>
-                                    <input type="date" name="date" id="date" class="form-control datepicker"
+                                    <input type="date" value="{{ $date }}" name="date" id="date" class="form-control datepicker"
                                         placeholder="YYYY-MM-DD">
                                 </div>
                                 <div class="form-group col-md-3">
@@ -99,17 +99,17 @@
                                     </tbody>
                                     <tbody>
                                         <tr>
-                                            <td colspan="4">Discount</td>
+                                            <td class="text-right" colspan="4">Discount </td>
                                             <td>
-                                                <input type="text" name="discount_amount" id="discount_amount" class="form-control form-control-sm discount_amount" placeholder="Enter Discount Amount">
+                                                <input type="text" name="discount_amount" id="discount_amount" class="form-control form-control-sm discount_amount text-right" placeholder="Enter Discount Amount">
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td colspan="4"></td>
+                                            <td class="text-right" colspan="4">Grand Total </td>
                                             <td>
                                                 <input type="text" name="estimated_amount" value="0"
                                                     id="estimated_amount"
-                                                    class="form-control form-control-sm text-right estimated_amount"
+                                                    class="form-control form-control-sm text-right estimated_amount text-right"
                                                     readonly style="background-color: #D8FDBA" />
                                             </td>
                                             <td></td>
@@ -185,7 +185,7 @@
                 <input type="hidden" name="product_id[]" value="@{{ product_id }}"> @{{ product_name }}
             </td>
             <td>
-                <input type="number" min="1" name="buying_qty[]" value="1" class="form-control form-control-sm text-right selling_qty">
+                <input type="number" min="1" name="selling_qty[]" value="1" class="form-control form-control-sm text-right selling_qty">
             </td>
             <td>
                 <input type="number" min="1" name="unit_price[]" value="" class="form-control form-control-sm text-right unit_price">
