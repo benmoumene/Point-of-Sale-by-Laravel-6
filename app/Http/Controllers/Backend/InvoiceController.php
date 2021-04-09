@@ -115,8 +115,8 @@ class InvoiceController extends Controller
         return  redirect()->route('invoice.view')->with('success', 'Invoice Data saved successfully');
     }
     function pendingList(){
-        $allData = Purchase::orderBy('date', 'desc')->orderBy('id', 'desc')->where('status', '0')->get();
-        return view('backend.purchase.view-pending-list', compact('allData'));
+        $allData = Invoice::orderBy('date', 'desc')->orderBy('id', 'desc')->where('status', '0')->get();
+        return view('backend.invoice.pending-invoice-list', compact('allData'));
     }
 
 
@@ -137,8 +137,10 @@ class InvoiceController extends Controller
 
     public function delete($id)
     {
-        $data = Purchase::find($id);
-        $data->delete();
-        return redirect()->route('purchase.view')->with('warning', 'Purchase Deleted!');
+        Invoice::find($id)->delete();
+        InvoiceDetail::where('invoice_id', $id)->delete();
+        Payment::where('invoice_id', $id)->delete();
+        PaymentDetail::where('invoice_id', $id)->delete();
+        return redirect()->route('invoice.pending.list')->with('warning', 'Invoice Date Deleted!');
     }
 }
