@@ -41,21 +41,23 @@
                                         <th>Invoice No</th>
                                         <th>Date</th>
                                         <th>Description</th>
-                                        <th style="width: 12%">Action</th>
+                                        <th style="width: 12%">Amount</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-{{--                                    @foreach($allData as $key => $invoice)--}}
-{{--                                        <tr>--}}
-{{--                                            <td>{{ $key+1 }}</td>--}}
-{{--                                            <td>{{ $invoice->customer_name }}</td>--}}
-{{--                                            <td>{{ date('d-m-y', strtotime($invoice->date)) }}</td>--}}
-{{--                                            <td>{{ $invoice->description }}</td>--}}
-{{--                                            <td>--}}
-{{--                                                <a href="{{route('purchase.delete', $purchase->id)}}" id="delete" title="delete" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>--}}
-{{--                                            </td>--}}
-{{--                                        </tr>--}}
-{{--                                    @endforeach--}}
+                                   @foreach($allData as $key => $invoice)
+                                     <tr>
+                                       <td>{{ $key+1 }}</td>
+                                          <td>
+                                              {{ $invoice['payment']['customer']['name'] }} ({{ $invoice['payment']['customer']['mobile_no'] }})
+                                            </td>
+                                          <td>Invoice No #{{ $invoice->invoice_no }}</td>                                          <td>{{ date('d-m-y', strtotime($invoice->date)) }}</td>
+                                          <td>{{ $invoice->description }}</td>
+                                          <td>
+                                            {{ $invoice['payment']['paid_amount'] }}
+                                         </td>
+                                      </tr>
+                                @endforeach
                                     </tbody>
                                 </table>
                             </div>

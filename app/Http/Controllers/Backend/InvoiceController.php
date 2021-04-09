@@ -5,23 +5,23 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use App\Model\InvoiceDetail;
+use App\Model\PaymentDetail;
 use App\Model\Category;
-use App\Model\Product;
 use App\Model\Purchase;
 use App\Model\Supplier;
 Use App\Model\Customer;
-use App\Model\Unit;
+use App\Model\Product;
 use App\Model\Invoice;
-use App\Model\InvoiceDetail;
 use App\Model\Payment;
-use App\Model\PaymentDetail;
+use App\Model\Unit;
 use Auth;
 
 class InvoiceController extends Controller
 {
     public function view()
     {
-        $allData = Invoice::orderBy('date', 'desc')->orderBy('id', 'desc')->get();
+        $allData = Invoice::orderBy('date', 'desc')->orderBy('id', 'desc')->where('status', '1')->get();
         return view('backend.invoice.view-invoice', compact('allData'));
 
     }
