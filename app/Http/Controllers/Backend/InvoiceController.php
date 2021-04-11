@@ -122,17 +122,9 @@ class InvoiceController extends Controller
 
     public function approve($id)
     {
-        $purchase = Purchase::find($id);
-        $product = Product::where('id', $purchase->product_id)->first();
-        $purchase_qty = ((float)($purchase->buying_qty))+((float)($product->quantity));
-        $product->quantity = $purchase_qty;
-        if($product->save()){
-            DB::table('purchases')
-                ->where('id', $id)
-                ->update(['status' => 1]);
-        }
+        $invoice = Invoice::with(['invoice_details'])->find($id);
 
-        return redirect()->route('purchase.pending.list')->with('success', 'Purchase approved!');
+        return view('backend.invoice.invoice-approve', compact('invoice'));
     }
 
     public function delete($id)
