@@ -112,7 +112,7 @@ class InvoiceController extends Controller
                 });
             }
         }
-        return  redirect()->route('invoice.view')->with('success', 'Invoice Data saved successfully');
+        return  redirect()->route('invoice.pending.list')->with('success', 'Invoice Data saved successfully');
     }
     function pendingList(){
         $allData = Invoice::orderBy('date', 'desc')->orderBy('id', 'desc')->where('status', '0')->get();
@@ -125,6 +125,30 @@ class InvoiceController extends Controller
         $invoice = Invoice::with(['invoice_details'])->find($id);
 
         return view('backend.invoice.invoice-approve', compact('invoice'));
+    }
+
+    public function approvalStore(Request $request, $id)
+    {
+        foreach($request->selling_qty as $key => $val){
+            $invoice_details = InvoiceDetail::where('id', $key)->first();
+            $product = Product::where('id', $invoice_details->product_id)->first();
+            if($product->quantity < $request->selling_qty[$key]){
+                return redirect()->back()->with('error', 'Sorry! You requested maximum value!');
+            }
+        }
+        $invoice = Invoice::find($id);
+        $invoice->approved_by = Auth::user()->id;
+        $invoice->status = '1';
+        DB::transaction(function () use($request, $invoice, $id) {
+            foreach($request->selling_qty as $key => $value){
+                $invoice_details = InvoiceDetail::where('id', $key)->first();
+                $product = Product::where('id', $invoice_details->product_id)->first();
+                $product->quantity = ((float)$product->quantity) - ((float)$request->selling_qty[$key]);
+                $product->save();
+            }
+            $invoice->save();
+        });
+        return redirect()->route('invoice.pending.list')->with('success', 'Invoice approved!');
     }
 
     public function delete($id)
