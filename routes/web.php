@@ -95,5 +95,6 @@ Route::group(['middleware' => 'auth'], function (){
         Route::get('delete/{id}', 'Backend\InvoiceController@delete')->name('invoice.delete');
         Route::get('print/list', 'Backend\InvoiceController@printInvoiceList')->name('invoice.print.list');
         Route::get('print/{id}', 'Backend\InvoiceController@printInvoice')->name('invoice.print');
+        Route::get('daily/report', 'Backend\InvoiceController@dailyReport')->name('inovice.dailyReport');
     });
 });

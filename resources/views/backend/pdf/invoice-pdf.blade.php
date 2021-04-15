@@ -19,9 +19,6 @@
                     @endphp
                     <tbody>
                         <tr>
-                            <td width="15%">
-                                <p style="font-weight: bold;">Customer Info: </p>
-                            </td>
                             <td width="25%">
                                 <p style="font-weight: bold;">Name: </p><span>{{$payment['customer']['name']}}</span>
                             </td>
