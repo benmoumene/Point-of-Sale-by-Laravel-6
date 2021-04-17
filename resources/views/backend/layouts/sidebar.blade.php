@@ -108,5 +108,45 @@ $route = Route::current()->getName();
                 </li>
             </ul>
         </li>
+        {{--        Invoice  management        --}}
+        <li class="nav-item has-treeview {{($prefix=='/invoice')? 'menu-open' : ''}}">
+            <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-copy"></i>
+                <p>
+                    Manage Invoice
+                    <i class="fas fa-angle-left right"></i>
+                </p>
+            </a>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="{{ route('invoice.view')  }}"
+                       class="nav-link {{($route=='invoice.view')? 'active' : ''}}">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>View Invoice</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('invoice.pending.list') }}"
+                       class="nav-link {{($route=='invoice.pending.list')? 'active' : ''}}">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Approval Invoice</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('invoice.print.list') }}"
+                       class="nav-link {{($route == 'invoice.print.list')? 'active' : ''}}">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Print Invoice</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('inovice.dailyReport') }}"
+                       class="nav-link {{($route == 'inovice.dailyReport')? 'active' : ''}}">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Daily Invoice Report</p>
+                    </a>
+                </li>
+            </ul>
+        </li>
     </ul>
 </nav>

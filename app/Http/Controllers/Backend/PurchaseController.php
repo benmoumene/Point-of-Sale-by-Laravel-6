@@ -57,14 +57,6 @@ class PurchaseController extends Controller
         return view('backend.purchase.view-pending-list', compact('allData'));
     }
 
-    public function edit($id)
-    {
-//        $editData = Product::find($id);
-//        $suppliers = Supplier::select('id', 'name')->get();
-//        $categories = Category::select('id', 'name')->get();
-//        $units = Unit::select('id', 'name')->get();
-//        return view('backend.product.edit-product', compact('editData', 'suppliers', 'categories', 'units'));
-    }
 
     public function approve($id)
     {

@@ -54,7 +54,7 @@
                                         </div>
                                         <div class="form-group col-md-4">
                                             <label for="supplier_id">Select Supplier</label>
-                                            <select name="supplier_id" id="supplier_id" class="form-control">
+                                            <select name="supplier_id" id="supplier_id" class="form-control select2">
                                                 <option value="">Select Supplier</option>
                                                 @foreach ($suppliers as $supplier)
                                                     <option value="{{ $supplier->id }}">{{ $supplier->name }}</option>
@@ -63,13 +63,13 @@
                                         </div>
                                         <div class="form-group col-md-4">
                                             <label for="category_id">Select Category</label>
-                                            <select name="category_id" id="category_id" class="form-control" disabled>
+                                            <select name="category_id" id="category_id" class="form-control select2" disabled>
                                                 <option value="">Select Category</option>
                                             </select>
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label for="product_id">Select Product</label>
-                                            <select name="product_id" id="product_id" class="form-control" disabled>
+                                            <select name="product_id" id="product_id" class="form-control select2" disabled>
                                                 <option value="">Select Product</option>
                                             </select>
                                         </div>
@@ -300,9 +300,11 @@
             });
         });
     </script>
-    <script>
-        // $(".datepicker").datepicker({
-        //     format: 'yyyy-mm-dd'
-        // });
+    <script type="text/javascript">
+        $(function (){
+            $('.select2').select2({
+                theme: 'bootstrap4'
+            });
+        });
     </script>
 @endsection
