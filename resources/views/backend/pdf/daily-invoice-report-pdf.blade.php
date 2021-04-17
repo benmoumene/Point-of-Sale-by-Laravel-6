@@ -33,9 +33,14 @@
                         <tr>
                             <td width="30%"></td>
                             <td>
-                                <u><strong><span style="font-style: 15px;">Daily Invoice
-                                            Report({{ date('d-m-Y', strtotime($start_date)) }} -
-                                            {{ date('d-m-Y', strtotime($end_date)) }})</span></strong></u>
+                                <u>
+                                    <strong>
+                                        <span style="font-style: 15px;">
+                                            Daily Invoice Report({{ date('d-m-Y', strtotime($start_date)) }} -
+                                            {{ date('d-m-Y', strtotime($end_date)) }})
+                                        </span>
+                                    </strong>
+                                </u>
                             </td>
                         </tr>
                     </tbody>
