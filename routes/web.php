@@ -96,5 +96,6 @@ Route::group(['middleware' => 'auth'], function (){
         Route::get('print/list', 'Backend\InvoiceController@printInvoiceList')->name('invoice.print.list');
         Route::get('print/{id}', 'Backend\InvoiceController@printInvoice')->name('invoice.print');
         Route::get('daily/report', 'Backend\InvoiceController@dailyReport')->name('inovice.dailyReport');
+        Route::get('daily/report/pdf', 'Backend\InvoiceController@dailyReportPDF')->name('invoice.daily.report.pdf');
     });
 });
