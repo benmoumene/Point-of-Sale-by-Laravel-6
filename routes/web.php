@@ -98,4 +98,10 @@ Route::group(['middleware' => 'auth'], function (){
         Route::get('daily/report', 'Backend\InvoiceController@dailyReport')->name('inovice.dailyReport');
         Route::get('daily/report/pdf', 'Backend\InvoiceController@dailyReportPDF')->name('invoice.daily.report.pdf');
     });
+
+    //    Stock routes
+    Route::prefix('stock')->group(function(){
+        Route::get('/report', 'Backend\StockController@stockReport')->name('stock.report');
+        Route::get('/report/pdf', 'Backend\StockController@stockReportPdf')->name('stock.report.pdf');
+    });
 });
