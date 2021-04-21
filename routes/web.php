@@ -103,5 +103,6 @@ Route::group(['middleware' => 'auth'], function (){
     Route::prefix('stock')->group(function(){
         Route::get('/report', 'Backend\StockController@stockReport')->name('stock.report');
         Route::get('/report/pdf', 'Backend\StockController@stockReportPdf')->name('stock.report.pdf');
+        Route::get('/report/supplier/product/wise', 'Backend\StockController@supplierProductWise')->name('stock.report.supplier.product.wish');
     });
 });

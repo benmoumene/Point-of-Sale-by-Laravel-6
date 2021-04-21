@@ -20,4 +20,9 @@ class StockController extends Controller
         $pdf->SetProtection(['copy', 'print'], '', 'pass');
         return $pdf->stream('document.pdf');
     }
+
+
+    public function supplierProductWise(){
+        return view('backend.stock.supplier-product-wish-report');
+    }
 }

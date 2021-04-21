@@ -148,7 +148,7 @@ $route = Route::current()->getName();
             </ul>
         </li>
         {{--        Stock report  management        --}}
-        <li class="nav-item has-treeview {{($prefix=='/stock')? 'menu-open' : ''}}">
+        <li class="nav-item has-treeview {{($prefix == '/stock')? 'menu-open' : ''}}">
             <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-copy"></i>
                 <p>
@@ -158,9 +158,15 @@ $route = Route::current()->getName();
             </a>
             <ul class="nav nav-treeview">
                 <li class="nav-item">
-                    <a href="{{ route('stock.report')  }}" class="nav-link {{($route=='stock.report')? 'active' : ''}}">
+                    <a href="{{ route('stock.report') }}" class="nav-link {{($route == 'stock.report')? 'active' : ''}}">
                         <i class="far fa-circle nav-icon"></i>
                         <p>Stock Report</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('stock.report.supplier.product.wish') }}" class="nav-link {{($route == 'stock.report.supplier.product.wish')? 'active' : ''}}">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Supplier/Product Wish</p>
                     </a>
                 </li>
             </ul>
