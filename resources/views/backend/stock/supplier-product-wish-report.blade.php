@@ -39,6 +39,24 @@
                                         <input type="radio" name="supplier_product_wish" value="product_wish" class="search_value"> &nbsp;&nbsp;
                                     </div>
                                 </div>
+                                <div class="show_supplier">
+                                    <form action="" method="get" id="supplierWishForm">
+                                        <div class="form-row">
+                                            <div class="col-md-8">
+                                                <label for="supplier_id">Supplier Name</label>
+                                                <select name="supplier_id" id="supplier_id" class="form-control select2">
+                                                    <option value="">Select Supplier</option>
+                                                    @foreach ($suppliers as $supplier)
+                                                        <option value="{{ $supplier->id }}">{{ $supplier->name}}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                            <div class="col-md-4" style="padding-top: 29px;">
+                                                <button class="btn btn-success">Search</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </section>
@@ -49,5 +67,4 @@
         </section>
         <!-- /.content -->
     </div>
-
 @endsection

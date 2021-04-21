@@ -23,6 +23,7 @@ class StockController extends Controller
 
 
     public function supplierProductWise(){
-        return view('backend.stock.supplier-product-wish-report');
+        $data['suppliers'] = \App\Model\Supplier::all();
+        return view('backend.stock.supplier-product-wish-report', $data);
     }
 }
