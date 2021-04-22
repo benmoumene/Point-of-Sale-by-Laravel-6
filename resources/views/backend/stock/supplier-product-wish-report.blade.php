@@ -39,12 +39,12 @@
                                         <input type="radio" name="supplier_product_wish" value="product_wish" class="search_value"> &nbsp;&nbsp;
                                     </div>
                                 </div>
-                                <div class="show_supplier">
-                                    <form action="" method="get" id="supplierWishForm">
+                                <div class="show_supplier" style="display: none;">
+                                    <form action="{{ route('stock.report.supplier.product.wish.pdf') }}" method="get" id="supplierWishForm" target="_blank">
                                         <div class="form-row">
                                             <div class="col-md-8">
                                                 <label for="supplier_id">Supplier Name</label>
-                                                <select name="supplier_id" id="supplier_id" class="form-control select2">
+                                                <select name="supplier_id" id="supplier_id" class="form-control select2" required>
                                                     <option value="">Select Supplier</option>
                                                     @foreach ($suppliers as $supplier)
                                                         <option value="{{ $supplier->id }}">{{ $supplier->name}}</option>
@@ -52,7 +52,7 @@
                                                 </select>
                                             </div>
                                             <div class="col-md-4" style="padding-top: 29px;">
-                                                <button class="btn btn-success">Search</button>
+                                                <button type="submit" class="btn btn-success">Search</button>
                                             </div>
                                         </div>
                                     </form>
@@ -67,4 +67,14 @@
         </section>
         <!-- /.content -->
     </div>
+    <script type="text/javascript">
+    $(document).on('change', '.search_value', function(){
+        var search_value = $(this).val();
+        if(search_value == 'supplier_wish'){
+            $('.show_supplier').show();
+        } else {
+            $('.show_supplier').hide();
+        }
+    });
+    </script>
 @endsection
