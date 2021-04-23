@@ -104,6 +104,7 @@ Route::group(['middleware' => 'auth'], function (){
         Route::get('/report', 'Backend\StockController@stockReport')->name('stock.report');
         Route::get('/report/pdf', 'Backend\StockController@stockReportPdf')->name('stock.report.pdf');
         Route::get('/report/supplier/product/wise', 'Backend\StockController@supplierProductWise')->name('stock.report.supplier.product.wish');
-        Route::get('/report/supplier/product/wise/pdf', 'Backend\StockController@supplierProductWisePdf')->name('stock.report.supplier.product.wish.pdf');
+        Route::get('/report/supplier/wise/pdf', 'Backend\StockController@supplierWisePdf')->name('stock.report.supplier.wish.pdf');
+        Route::get('/report/prdouct/wise/pdf', 'Backend\StockController@productWisePdf')->name('stock.report.product.wish.pdf');
     });
 });

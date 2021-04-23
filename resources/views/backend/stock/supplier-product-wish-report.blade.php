@@ -37,10 +37,11 @@
                                         <strong>Supplier Wish Report</strong>
                                         <input type="radio" name="supplier_product_wish" value="supplier_wish" class="search_value"> &nbsp;&nbsp;                                        <strong>Product Wish Report</strong>
                                         <input type="radio" name="supplier_product_wish" value="product_wish" class="search_value"> &nbsp;&nbsp;
+                                        <hr>
                                     </div>
                                 </div>
                                 <div class="show_supplier" style="display: none;">
-                                    <form action="{{ route('stock.report.supplier.product.wish.pdf') }}" method="get" id="supplierWishForm" target="_blank">
+                                    <form action="{{ route('stock.report.supplier.wish.pdf') }}" method="get" id="supplierWishForm" target="_blank">
                                         <div class="form-row">
                                             <div class="col-md-8">
                                                 <label for="supplier_id">Supplier Name</label>
@@ -52,6 +53,31 @@
                                                 </select>
                                             </div>
                                             <div class="col-md-4" style="padding-top: 29px;">
+                                                <button type="submit" class="btn btn-success">Search</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                {{-- product wish pdf --}}
+                                <div class="show_product" style="display: none;">
+                                    <form action="{{ route('stock.report.product.wish.pdf') }}" method="get" id="productWishForm" target="_blank">
+                                        <div class="form-row">
+                                                <div class="form-group col-md-3 offset-3">
+                                                    <label for="category_id">Select Category</label>
+                                                    <select name="category_id" id="category_id" class="form-control select2" required>
+                                                        <option value="">Select Category</option>
+                                                        @foreach ($categories as $category)
+                                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+                                                <div class="form-group col-md-3">
+                                                    <label for="product_id">Select Product</label>
+                                                    <select name="product_id" id="product_id" class="form-control select2" disabled required>
+                                                        <option value="">Select Product</option>
+                                                    </select>
+                                                </div>
+                                            <div class="col-md-4 offset-6" style="padding-top: 29px;">
                                                 <button type="submit" class="btn btn-success">Search</button>
                                             </div>
                                         </div>
@@ -75,6 +101,44 @@
         } else {
             $('.show_supplier').hide();
         }
+        if(search_value == 'product_wish'){
+            $('.show_product').show();
+        } else {
+            $('.show_product').hide();
+        }
     });
+    </script>
+<script type="text/javascript">
+    $(function () {
+        $(document).on('change', '#category_id', function () {
+            var category_id = $(this).val();
+            $.ajax({
+                url: "{{ route('get-product') }}",
+                type: "GET",
+                data: {
+                    category_id: category_id
+                },
+                success: function (data) {
+                    var html = '<option value="">Select Product</option>';
+                    $.each(data, function (key, v) {
+                        html += '<option value="' + v.id + '">' + v.name +
+                            '</option>';
+                    });
+                    $('#product_id').html(html);
+                    $('#product_id').removeAttr("disabled");
+                }
+            });
+        });
+    });
+
+</script>
+    {{-- select2 --}}
+    <script type="text/javascript">
+        $(function () {
+            $('.select2').select2({
+                theme: 'bootstrap4'
+            });
+        });
+
     </script>
 @endsection
