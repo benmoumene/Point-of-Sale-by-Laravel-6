@@ -94,14 +94,14 @@ $route = Route::current()->getName();
             <ul class="nav nav-treeview">
                 <li class="nav-item">
                     <a href="{{ route('purchase.view')  }}"
-                       class="nav-link {{($route=='purchase.view')? 'active' : ''}}">
+                        class="nav-link {{($route=='purchase.view')? 'active' : ''}}">
                         <i class="far fa-circle nav-icon"></i>
                         <p>View Purchase</p>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('purchase.pending.list') }}"
-                       class="nav-link {{($route=='purchase.pending.list')? 'active' : ''}}">
+                        class="nav-link {{($route=='purchase.pending.list')? 'active' : ''}}">
                         <i class="far fa-circle nav-icon"></i>
                         <p>Approval Purchase</p>
                     </a>
@@ -119,31 +119,54 @@ $route = Route::current()->getName();
             </a>
             <ul class="nav nav-treeview">
                 <li class="nav-item">
-                    <a href="{{ route('invoice.view')  }}"
-                       class="nav-link {{($route=='invoice.view')? 'active' : ''}}">
+                    <a href="{{ route('invoice.view')  }}" class="nav-link {{($route=='invoice.view')? 'active' : ''}}">
                         <i class="far fa-circle nav-icon"></i>
                         <p>View Invoice</p>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('invoice.pending.list') }}"
-                       class="nav-link {{($route=='invoice.pending.list')? 'active' : ''}}">
+                        class="nav-link {{($route=='invoice.pending.list')? 'active' : ''}}">
                         <i class="far fa-circle nav-icon"></i>
                         <p>Approval Invoice</p>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('invoice.print.list') }}"
-                       class="nav-link {{($route == 'invoice.print.list')? 'active' : ''}}">
+                        class="nav-link {{($route == 'invoice.print.list')? 'active' : ''}}">
                         <i class="far fa-circle nav-icon"></i>
                         <p>Print Invoice</p>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('inovice.dailyReport') }}"
-                       class="nav-link {{($route == 'inovice.dailyReport')? 'active' : ''}}">
+                        class="nav-link {{($route == 'inovice.dailyReport')? 'active' : ''}}">
                         <i class="far fa-circle nav-icon"></i>
                         <p>Daily Invoice Report</p>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        {{--        Stock report  management        --}}
+        <li class="nav-item has-treeview {{($prefix == '/stock')? 'menu-open' : ''}}">
+            <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-copy"></i>
+                <p>
+                    Manage Stock
+                    <i class="fas fa-angle-left right"></i>
+                </p>
+            </a>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="{{ route('stock.report') }}" class="nav-link {{($route == 'stock.report')? 'active' : ''}}">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Stock Report</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('stock.report.supplier.product.wish') }}" class="nav-link {{($route == 'stock.report.supplier.product.wish')? 'active' : ''}}">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Supplier/Product Wish</p>
                     </a>
                 </li>
             </ul>
