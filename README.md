@@ -2,6 +2,10 @@
 
 
 
+# Info
+
+Admin: abiruzzaman.molla@gmail.com
+Password: 12345678
 
 # ToDo
 - Customer Credit Report
