@@ -78,6 +78,8 @@ Route::group(['middleware' => 'auth'], function (){
         Route::get('pending', 'Backend\PurchaseController@pendingList')->name('purchase.pending.list');
         Route::get('approve/{id}', 'Backend\PurchaseController@approve')->name('purchase.approve');
         Route::get('delete/{id}', 'Backend\PurchaseController@delete')->name('purchase.delete');
+        Route::get('report', 'Backend\PurchaseController@dailyReport')->name('purchase.daily.report');
+        Route::get('report/pdf', 'Backend\PurchaseController@dailyReportPDF')->name('purchase.daily.report.pdf');
     });
     //Default Routes
     Route::get('/get-category', 'Backend\DefaultController@getCategory')->name('get-category');

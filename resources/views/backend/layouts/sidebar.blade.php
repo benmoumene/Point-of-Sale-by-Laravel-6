@@ -106,6 +106,13 @@ $route = Route::current()->getName();
                         <p>Approval Purchase</p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{ route('purchase.daily.report') }}"
+                        class="nav-link {{($route=='purchase.daily.report')? 'active' : ''}}">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Daily Purchase Report</p>
+                    </a>
+                </li>
             </ul>
         </li>
         {{--        Invoice  management        --}}
