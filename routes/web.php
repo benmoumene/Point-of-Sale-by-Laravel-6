@@ -46,6 +46,8 @@ Route::group(['middleware' => 'auth'], function (){
         Route::get('delete/{id}', 'Backend\CustomerController@delete')->name('customers.delete');
         Route::get('credit', 'Backend\CustomerController@credit')->name('customers.credit');
         Route::get('credit/pdf', 'Backend\CustomerController@creditPdf')->name('customers.credit.pdf');
+        Route::get('credit/edit/{invoice_id}', 'Backend\CustomerController@invoiceEdit')->name('customers.credit.invoice.edit');
+        Route::post('credit/update/{invoice_id}', 'Backend\CustomerController@invoiceUpdate')->name('customers.credit.invoice.update');
     });
 
 

@@ -53,7 +53,7 @@ $route = Route::current()->getName();
             </a>
         </li>
         {{--        customer management        --}}
-        <li class="nav-item has-treeview {{($prefix=='/customer')? 'menu-open' : ''}}">
+        <li class="nav-item has-treeview {{($prefix=='/customers')? 'menu-open' : ''}}">
             <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-copy"></i>
                 <p>

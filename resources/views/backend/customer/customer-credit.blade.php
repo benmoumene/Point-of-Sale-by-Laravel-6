@@ -54,7 +54,7 @@
                                             <td>{{ date("d-m-Y", strtotime($payment['invoice']['date'])) }}</td>
                                             <td>{{ $payment->due_amount  }}৳</td>
                                             <td>
-                                                <a href="" title="edit" class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></a>
+                                                <a href="{{ route('customers.credit.invoice.edit', $payment->invoice_id) }}" title="edit" class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></a>
                                                 <a href="" id="details" title="details" class="btn btn-sm btn-success"><i class="fa fa-eye"></i></a>
                                             </td>
                                         </tr>
