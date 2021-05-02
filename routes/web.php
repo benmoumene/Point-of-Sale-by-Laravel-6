@@ -34,6 +34,8 @@ Route::group(['middleware' => 'auth'], function (){
         Route::post('update/{id}', 'Backend\SupplierController@update')->name('suppliers.update');
         Route::get('delete/{id}', 'Backend\SupplierController@delete')->name('suppliers.delete');
     });
+
+
     //    Customers routes
     Route::prefix('customers')->group(function(){
         Route::get('view', 'Backend\CustomerController@view')->name('customers.view');
@@ -42,7 +44,11 @@ Route::group(['middleware' => 'auth'], function (){
         Route::get('edit/{id}', 'Backend\CustomerController@edit')->name('customers.edit');
         Route::post('update/{id}', 'Backend\CustomerController@update')->name('customers.update');
         Route::get('delete/{id}', 'Backend\CustomerController@delete')->name('customers.delete');
+        Route::get('credit', 'Backend\CustomerController@credit')->name('customers.credit');
+        Route::get('credit/pdf', 'Backend\CustomerController@creditPdf')->name('customers.credit.pdf');
     });
+
+
     //    Unit routes
     Route::prefix('units')->group(function(){
         Route::get('view', 'Backend\UnitController@view')->name('units.view');

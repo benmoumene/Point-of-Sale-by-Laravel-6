@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Model\Customer;
 use Illuminate\Support\Facades\Auth;
+use App\Model\Payment;
+use PDF;
 
 class CustomerController extends Controller
 {
@@ -51,6 +53,15 @@ class CustomerController extends Controller
         $data->updated_by = Auth::user()->id;
         $data->save();
         return redirect()->route('customers.view')->with('success', 'Customer info updated!');
+    }
+
+    public function credit(){
+        $allData = Payment::whereIn('paid_status', ['full_due', 'partial_paid'])->get();
+        return view('backend.customer.customer-credit', compact('allData'));
+    }
+
+    public function creditPdf(){
+        dd("Please download from credit page....");
     }
 
     public function delete($id){
