@@ -48,7 +48,7 @@ Route::group(['middleware' => 'auth'], function (){
         Route::get('credit/pdf', 'Backend\CustomerController@creditPdf')->name('customers.credit.pdf');
         Route::get('invoice/edit/{invoice_id}', 'Backend\CustomerController@invoiceEdit')->name('customers.credit.invoice.edit');
         Route::post('invoice/update/{invoice_id}', 'Backend\CustomerController@invoiceUpdate')->name('customers.credit.invoice.update');
-        Route::post('invoice/details/pdf/{invoice_id}', 'Backend\CustomerController@invoiceDetailsPdf')->name('customers.invoice.details.pdf');
+        Route::get('invoice/details/pdf/{invoice_id}', 'Backend\CustomerController@invoiceDetailsPdf')->name('customers.invoice.details.pdf');
     });
 
 
