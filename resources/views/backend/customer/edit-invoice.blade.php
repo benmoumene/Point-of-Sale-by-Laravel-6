@@ -28,7 +28,7 @@
                 <section class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <h3>Edit Customer
+                            <h3>Edit Invoice ( Inovie No #{{ $payment['invoice']['invoice_no'] }})
                             </h3>
                         </div>
                         <div class="card-body">

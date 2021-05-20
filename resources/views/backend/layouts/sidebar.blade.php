@@ -63,7 +63,8 @@ $route = Route::current()->getName();
             </a>
             <ul class="nav nav-treeview">
                 <li class="nav-item">
-                    <a href="{{ route('customers.view')  }}" class="nav-link {{($route=='customers.view')? 'active' : ''}}">
+                    <a href="{{ route('customers.view')  }}"
+                        class="nav-link {{($route=='customers.view')? 'active' : ''}}">
                         <i class="far fa-circle nav-icon"></i>
                         <p>View Customers</p>
                     </a>
@@ -73,6 +74,14 @@ $route = Route::current()->getName();
                         class="nav-link {{($route=='customers.credit')? 'active' : ''}}">
                         <i class="far fa-circle nav-icon"></i>
                         <p>Credit Customers</p>
+                    </a>
+                    <hr>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('customers.paid') }}"
+                        class="nav-link {{($route=='customers.paid')? 'active' : ''}}">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Paid Customers</p>
                     </a>
                     <hr>
                 </li>
@@ -185,13 +194,15 @@ $route = Route::current()->getName();
             </a>
             <ul class="nav nav-treeview">
                 <li class="nav-item">
-                    <a href="{{ route('stock.report') }}" class="nav-link {{($route == 'stock.report')? 'active' : ''}}">
+                    <a href="{{ route('stock.report') }}"
+                        class="nav-link {{($route == 'stock.report')? 'active' : ''}}">
                         <i class="far fa-circle nav-icon"></i>
                         <p>Stock Report</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('stock.report.supplier.product.wish') }}" class="nav-link {{($route == 'stock.report.supplier.product.wish')? 'active' : ''}}">
+                    <a href="{{ route('stock.report.supplier.product.wish') }}"
+                        class="nav-link {{($route == 'stock.report.supplier.product.wish')? 'active' : ''}}">
                         <i class="far fa-circle nav-icon"></i>
                         <p>Supplier/Product Wish</p>
                     </a>
