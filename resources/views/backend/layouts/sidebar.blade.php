@@ -53,12 +53,46 @@ $route = Route::current()->getName();
             </a>
         </li>
         {{--        customer management        --}}
-        <li class="nav-item">
-            <a href="{{ route('customers.view')  }}" class="nav-link {{($route=='customers.view')? 'active' : ''}}">
-                <i class="far fa-circle nav-icon"></i>
-                <p>View Customers</p>
+        <li class="nav-item has-treeview {{($prefix=='/customers')? 'menu-open' : ''}}">
+            <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-copy"></i>
+                <p>
+                    Manage Customers
+                    <i class="fas fa-angle-left right"></i>
+                </p>
             </a>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="{{ route('customers.view')  }}"
+                        class="nav-link {{($route=='customers.view')? 'active' : ''}}">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>View Customers</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('customers.credit') }}"
+                        class="nav-link {{($route=='customers.credit')? 'active' : ''}}">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Credit Customers</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('customers.paid') }}"
+                        class="nav-link {{($route=='customers.paid')? 'active' : ''}}">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Paid Customers</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('customers.wish.report') }}"
+                        class="nav-link {{($route=='customers.wish.report')? 'active' : ''}}">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Customer wish Report</p>
+                    </a>
+                </li>
+            </ul>
         </li>
+
         {{--        units management        --}}
         <li class="nav-item">
             <a href="{{ route('units.view')  }}" class="nav-link {{($route=='units.view')? 'active' : ''}}">
@@ -165,13 +199,15 @@ $route = Route::current()->getName();
             </a>
             <ul class="nav nav-treeview">
                 <li class="nav-item">
-                    <a href="{{ route('stock.report') }}" class="nav-link {{($route == 'stock.report')? 'active' : ''}}">
+                    <a href="{{ route('stock.report') }}"
+                        class="nav-link {{($route == 'stock.report')? 'active' : ''}}">
                         <i class="far fa-circle nav-icon"></i>
                         <p>Stock Report</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('stock.report.supplier.product.wish') }}" class="nav-link {{($route == 'stock.report.supplier.product.wish')? 'active' : ''}}">
+                    <a href="{{ route('stock.report.supplier.product.wish') }}"
+                        class="nav-link {{($route == 'stock.report.supplier.product.wish')? 'active' : ''}}">
                         <i class="far fa-circle nav-icon"></i>
                         <p>Supplier/Product Wish</p>
                     </a>

@@ -34,6 +34,8 @@ Route::group(['middleware' => 'auth'], function (){
         Route::post('update/{id}', 'Backend\SupplierController@update')->name('suppliers.update');
         Route::get('delete/{id}', 'Backend\SupplierController@delete')->name('suppliers.delete');
     });
+
+
     //    Customers routes
     Route::prefix('customers')->group(function(){
         Route::get('view', 'Backend\CustomerController@view')->name('customers.view');
@@ -42,7 +44,17 @@ Route::group(['middleware' => 'auth'], function (){
         Route::get('edit/{id}', 'Backend\CustomerController@edit')->name('customers.edit');
         Route::post('update/{id}', 'Backend\CustomerController@update')->name('customers.update');
         Route::get('delete/{id}', 'Backend\CustomerController@delete')->name('customers.delete');
+        Route::get('credit', 'Backend\CustomerController@credit')->name('customers.credit');
+        Route::get('credit/pdf', 'Backend\CustomerController@creditPdf')->name('customers.credit.pdf');
+        Route::get('invoice/edit/{invoice_id}', 'Backend\CustomerController@invoiceEdit')->name('customers.credit.invoice.edit');
+        Route::post('invoice/update/{invoice_id}', 'Backend\CustomerController@invoiceUpdate')->name('customers.credit.invoice.update');
+        Route::get('invoice/details/pdf/{invoice_id}', 'Backend\CustomerController@invoiceDetailsPdf')->name('customers.invoice.details.pdf');
+        Route::get('paid', 'Backend\CustomerController@paid')->name('customers.paid');
+        Route::get('paid/pdf', 'Backend\CustomerController@paidPdf')->name('customers.paid.pdf');
+        Route::get('wish/report', 'Backend\CustomerController@customerWishReport')->name('customers.wish.report');
     });
+
+
     //    Unit routes
     Route::prefix('units')->group(function(){
         Route::get('view', 'Backend\UnitController@view')->name('units.view');
