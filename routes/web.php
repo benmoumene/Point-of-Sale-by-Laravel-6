@@ -51,6 +51,7 @@ Route::group(['middleware' => 'auth'], function (){
         Route::get('invoice/details/pdf/{invoice_id}', 'Backend\CustomerController@invoiceDetailsPdf')->name('customers.invoice.details.pdf');
         Route::get('paid', 'Backend\CustomerController@paid')->name('customers.paid');
         Route::get('paid/pdf', 'Backend\CustomerController@paidPdf')->name('customers.paid.pdf');
+        Route::get('wish/report', 'Backend\CustomerController@customerWishReport')->name('customers.wish.report');
     });
 
 

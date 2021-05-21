@@ -73,6 +73,11 @@ class CustomerController extends Controller
         return redirect()->back()->with('error', 'Please download from paidlist page....');
     }
 
+    public function customerWishReport(){
+        $customers = Customer::all();
+        return view('backend.customer.customer-wish-report', compact('customers'));
+    }
+
     public function invoiceEdit($invoice_id){
         $payment = Payment::where('invoice_id', $invoice_id)->first();
         return view('backend.customer.edit-invoice', compact('payment'));

@@ -83,6 +83,13 @@ $route = Route::current()->getName();
                         <p>Paid Customers</p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{ route('customers.wish.report') }}"
+                        class="nav-link {{($route=='customers.wish.report')? 'active' : ''}}">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Customer wish Report</p>
+                    </a>
+                </li>
             </ul>
         </li>
 
