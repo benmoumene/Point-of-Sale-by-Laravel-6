@@ -75,7 +75,6 @@ $route = Route::current()->getName();
                         <i class="far fa-circle nav-icon"></i>
                         <p>Credit Customers</p>
                     </a>
-                    <hr>
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('customers.paid') }}"
@@ -83,7 +82,6 @@ $route = Route::current()->getName();
                         <i class="far fa-circle nav-icon"></i>
                         <p>Paid Customers</p>
                     </a>
-                    <hr>
                 </li>
             </ul>
         </li>

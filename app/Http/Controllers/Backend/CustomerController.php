@@ -61,7 +61,16 @@ class CustomerController extends Controller
     }
 
     public function creditPdf(){
-        dd("Please download from credit page....");
+        return redirect()->back()->with('error', 'Please download from credit page....');
+    }
+
+    public function paid(){
+        $allData = Payment::where('paid_status', '!=', 'full_due')->get();
+        return view('backend.customer.customer-paid', compact('allData'));
+    }
+
+    public function paidPdf(){
+        return redirect()->back()->with('error', 'Please download from paidlist page....');
     }
 
     public function invoiceEdit($invoice_id){
